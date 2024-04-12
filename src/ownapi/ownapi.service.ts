@@ -1,8 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { AxiosResponse } from 'axios';
-import { firstValueFrom, map, tap } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class OwnapiService {
