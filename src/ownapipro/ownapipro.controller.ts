@@ -9,11 +9,8 @@ export class OwnapiproController {
 
   @Post()
   async create(@Body() createOwnapiproDto: CreateOwnapiproDto) {
-    console.log(createOwnapiproDto.questionOrInfo);
     const clasificationResuls = await this.ownapiproService.create(createOwnapiproDto.questionOrInfo);
-    console.log('create: ', clasificationResuls);
     const use = await useTools(clasificationResuls);
-    
     return use;
   }
 

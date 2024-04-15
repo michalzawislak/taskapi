@@ -10,7 +10,6 @@ export async function thankForInfo(): Promise<string> {
             "Polite thank user for the information. Write polish. Use max 5 words."
         ),
     ]);
-    console.log(content);
     return content
 }
 
@@ -24,7 +23,6 @@ export async function answerQuestion(question: string): Promise<string> {
             `${question}`
         ),
     ]);
-    console.log(content);
     return content
 }
 

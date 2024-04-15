@@ -9,7 +9,6 @@ export async function langChainCompletion(question: string): Promise<string> {
             "Answer the question: " + question
         ),
     ]);
-    console.log(content);
     return content
 }
 
@@ -24,7 +23,6 @@ export async function langChainCompletionWithContext(context: string, question: 
             "Answer the question: " + question
         ),
     ]);
-    console.log(content);
     return content
 }
 
@@ -36,7 +34,6 @@ export async function langChainCompletionWithQuestionOrInfo(questionOrInfo: stri
     const result = await model.invoke([
         new HumanMessage(`${questionOrInfo}`)
     ]);
-    console.log(result);
     return parseFunctionCall(result);
 }
 
