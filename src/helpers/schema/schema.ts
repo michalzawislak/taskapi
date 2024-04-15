@@ -1,6 +1,3 @@
-import { userData } from "../user-data/user-data.store";
-
-
 export const infoSchema = {
     "name": "info",
     "description": "User information to be processed by the AI model",
@@ -44,7 +41,7 @@ export const questionSchema = {
             },
         },
         "required": [
-            "tool", "answer"
+            "tool", "userQuestion"
         ]
     }
 };
