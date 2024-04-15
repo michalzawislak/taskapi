@@ -1,20 +1,16 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { OwnapiService } from './ownapi.service';
-import { langChainCompletion } from 'src/helpers/langchain.helpers';
+import { langChainCompletion } from '../helpers/langchain.helpers';
+import { QuestionDto } from './dto/question.dto';
 
 @Controller('ownapi')
 export class OwnapiController {
     constructor(private ownApiService: OwnapiService) {}
 
-    @Get()
-    async getOwnapi() {
-        const token = (await this.ownApiService.getTask('ownapi'));
-        return token;
-    }
-
     @Post()
-    async postOwnapi(@Body() question: string) {
-        const completion = await langChainCompletion(question);
+    async postOwnapi(@Body() body: QuestionDto) {
+        console.log(body.question);
+        const completion = await langChainCompletion(body.question);
         return {
             reply: completion
         };
