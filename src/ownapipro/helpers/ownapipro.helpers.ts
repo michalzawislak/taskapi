@@ -1,6 +1,6 @@
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { HumanMessage, SystemMessage } from "langchain/schema";
-import { userData } from "src/helpers/user-data/user-data.store";
+import { userData } from "src/helpers/user-data/user-data";
 
 
 export async function thankForInfo(): Promise<string> {
